@@ -7,6 +7,8 @@
 </head>
 <body>
     <p> Hello darkness my old friend, I've came to talk with you again</p>
-    <h4> {{data}} </h4>
+    {% for book in books %}
+	    <h4>{{ book.title }}</h4>
+    {% endfor %}
 </body>
 </html>
