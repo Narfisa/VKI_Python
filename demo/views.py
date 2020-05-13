@@ -13,9 +13,11 @@ class BookViewSet(viewsets.ModelViewSet):
 	queryset = Book.objects.all()
 
 
-def first(request):
+class First(View):
     books = Book.objects.all()
-    return render(request, 'test.html', {'data': books})
+
+    def get(self, request):
+        return render(request, 'test.html', {'books': self.books})
 
 class Second(View):
     books = Book.objects.all()
