@@ -6,7 +6,7 @@ from .models import Book
 # Create your views here.
 
 def first(request):
-    return HttpResponse('Hello, hell!')
+    return render(request, 'test.html', {'data': 'Hello! I am some data from `first` func!'})
 
 class Second(View):
     books = Book.objects.all()
