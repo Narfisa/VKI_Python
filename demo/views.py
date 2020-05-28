@@ -3,15 +3,13 @@ from django.http import HttpResponse
 from django.views import View
 from .models import Book
 from .serializers import BookSerializer
-
-# Create your views here.
-
 from rest_framework import viewsets
+from rest_framework.authentication import TokenAuthentication
 
 class BookViewSet(viewsets.ModelViewSet):
 	serializer_class = BookSerializer
 	queryset = Book.objects.all()
-
+    #authentication_classes = (TokenAuthentication,)
 
 class First(View):
     books = Book.objects.all()
